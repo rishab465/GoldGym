@@ -20,7 +20,7 @@ const SimilarExercises = ({ targetMuscleExercises, equipmentExercises }) => (
       Similar <span style={{ color: '#FF2625', textTransform: 'capitalize' }}>Equipment</span> exercises
     </Typography>
     <Stack direction="row" sx={{ p: 2, position: 'relative' }}>
-        {equipmentExercises && equipmentExercises.length !== 0 ? (
+      {equipmentExercises && equipmentExercises.length !== 0 ? (
         <HorizontalScrollbar data={equipmentExercises} />
       ) : (
         <Loader />

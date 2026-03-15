@@ -24,7 +24,7 @@ const HeroBanner = () => (
         bottom: 0,
         backgroundColor: 'rgba(0, 0, 0, 0.2)',
         borderRadius: '20px',
-      }
+      },
     }}
     position="relative"
   >
@@ -37,7 +37,7 @@ const HeroBanner = () => (
       Check out the most effective exercises personalized to you
     </Typography>
     <Stack sx={{ position: 'relative', zIndex: 1, mt: '20px' }}>
-      <a href="#exercises" style={{ marginTop: '25px', textDecoration: 'none', width: '200px', textAlign: 'center', background: '#FF2625', padding: '14px 20px', fontSize: '18px', textTransform: 'none', color: 'white', borderRadius: '4px', fontWeight: 'bold', transition: 'all 0.3s ease', cursor: 'pointer', display: 'inline-block' }} onMouseEnter={(e) => e.target.style.backgroundColor = '#FF4444'} onMouseLeave={(e) => e.target.style.backgroundColor = '#FF2625'}>
+      <a href="#exercises" style={{ marginTop: '25px', textDecoration: 'none', width: '200px', textAlign: 'center', background: '#FF2625', padding: '14px 20px', fontSize: '18px', textTransform: 'none', color: 'white', borderRadius: '4px', fontWeight: 'bold', transition: 'all 0.3s ease', cursor: 'pointer', display: 'inline-block' }} onMouseEnter={(e) => { e.target.style.backgroundColor = '#FF4444'; }} onMouseLeave={(e) => { e.target.style.backgroundColor = '#FF2625'; }}>
         Explore Exercises
       </a>
     </Stack>

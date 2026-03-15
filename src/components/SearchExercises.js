@@ -14,7 +14,6 @@ const SearchExercises = ({ setExercises, bodyPart, setBodyPart }) => {
         const bodyPartsData = await fetchData('https://exercisedb.p.rapidapi.com/exercises/bodyPartList', exerciseOptions);
         setBodyParts(['all', ...bodyPartsData]);
       } catch (error) {
-        console.error('Failed to fetch body parts:', error);
         // Fallback list so the horizontal scrollbar still works
         setBodyParts(['all', 'chest', 'back', 'legs', 'shoulders', 'arms', 'core', 'neck', 'waist', 'cardio']);
       }
@@ -40,7 +39,6 @@ const SearchExercises = ({ setExercises, bodyPart, setBodyPart }) => {
         setSearch('');
         setExercises(searchedExercises);
       } catch (error) {
-        console.error('Failed to search exercises:', error);
         // Fallback mock data so search still returns exercises with images
         const fallbackExercises = [
           {

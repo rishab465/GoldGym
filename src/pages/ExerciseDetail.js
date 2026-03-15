@@ -34,7 +34,6 @@ const ExerciseDetail = () => {
         const equimentExercisesData = await fetchData(`${exerciseDbUrl}/exercises/equipment/${exerciseDetailData.equipment}`, exerciseOptions);
         setEquipmentExercises(equimentExercisesData);
       } catch (error) {
-        console.error('Failed to fetch exercise details:', error);
         setExerciseDetail(null); // Set to null to show No Data
       }
     };

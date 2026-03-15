@@ -4,6 +4,7 @@ import { Button, Stack, Typography } from '@mui/material';
 
 import { getExerciseImageUrl } from '../utils/exerciseImages';
 import { fetchData, youtubeOptions } from '../utils/fetchData';
+
 const ExerciseCard = ({ exercise }) => {
   const [thumbUrl, setThumbUrl] = useState(null);
 
@@ -20,7 +21,6 @@ const ExerciseCard = ({ exercise }) => {
         if (firstThumb) setThumbUrl(firstThumb);
       } catch (error) {
         // If YouTube search fails, silently fall back to static image
-        console.error('Failed to fetch YouTube thumbnail:', error);
       }
     };
 

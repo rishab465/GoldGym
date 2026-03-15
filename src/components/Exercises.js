@@ -23,8 +23,6 @@ const Exercises = ({ exercises, setExercises, bodyPart }) => {
 
         setExercises(exercisesData);
       } catch (error) {
-        console.error('Failed to fetch exercises:', error);
-
         // Fallback mock data so the app still shows content
         const fallbackExercises = [
           {
