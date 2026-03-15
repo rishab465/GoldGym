@@ -64,15 +64,18 @@ const HeroBanner = () => (
       </Button>
 
       <Typography
+        color="#FFFFFF"
         fontSize={{ lg: '22px', xs: '14px' }}
         fontFamily="Alegreya"
         lineHeight={{ lg: '35px', xs: '22px' }}
+        sx={{ maxWidth: { lg: '480px', xs: '320px' } }}
       >
         Check out the most effective exercises personalized to you
       </Typography>
 
       <Typography
         fontWeight={700}
+        color="#FFFFFF"
         sx={{ fontSize: { lg: '44px', xs: '26px' } }}
         mt={{ lg: '16px', xs: '10px' }}
       >
