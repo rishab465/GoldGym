@@ -28,7 +28,9 @@ const ExerciseCard = ({ exercise }) => {
           setThumbUrl(firstThumb);
         }
       } catch (error) {
-        // If YouTube search fails, silently fall back to static image
+        // Temporary: log YouTube errors to diagnose API/key issues
+        // eslint-disable-next-line no-console
+        console.error('YouTube API error:', error);
       }
     };
 
