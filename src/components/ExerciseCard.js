@@ -5,32 +5,42 @@ import { Button, Stack, Typography } from '@mui/material';
 import { getExerciseImageUrl } from '../utils/exerciseImages';
 import { fetchData, youtubeOptions } from '../utils/fetchData';
 
+const thumbnailCache = {};
+
 const ExerciseCard = ({ exercise }) => {
   const [thumbUrl, setThumbUrl] = useState(null);
 
   useEffect(() => {
     const fetchThumb = async () => {
       try {
+        const key = exercise.name;
+        if (thumbnailCache[key] !== undefined) {
+          setThumbUrl(thumbnailCache[key]);
+          return;
+        }
+
         const youtubeSearchUrl = 'https://youtube-search-and-download.p.rapidapi.com';
         const data = await fetchData(
           `${youtubeSearchUrl}/search?query=${encodeURIComponent(`${exercise.name} exercise`)}`,
           youtubeOptions,
         );
 
-        // Prefer the first video with thumbnails; fall back to the first result
         const firstVideoWithThumb = data?.contents?.find(
           (item) => item?.video && Array.isArray(item.video.thumbnails) && item.video.thumbnails.length > 0,
         );
 
         const firstThumb = firstVideoWithThumb?.video?.thumbnails?.[0]?.url
           || data?.contents?.[0]?.video?.thumbnails?.[0]?.url;
+
+        thumbnailCache[key] = firstThumb || null;
+
         if (firstThumb) {
           setThumbUrl(firstThumb);
         }
       } catch (error) {
-        // Temporary: log YouTube errors to diagnose API/key issues
         // eslint-disable-next-line no-console
         console.error('YouTube API error:', error);
+        thumbnailCache[exercise.name] = null;
       }
     };
 
