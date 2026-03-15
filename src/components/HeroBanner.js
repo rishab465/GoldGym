@@ -50,6 +50,14 @@ const HeroBanner = () => (
         }}
       >
         <Typography
+          fontSize={{ lg: '20px', xs: '13px' }}
+          fontFamily="Alegreya"
+          lineHeight={{ lg: '30px', xs: '20px' }}
+          sx={{ maxWidth: { lg: '360px', xs: '220px' }, mb: { lg: '8px', xs: '6px' } }}
+        >
+          Check out the most effective exercises personalized to you
+        </Typography>
+        <Typography
           fontWeight={700}
           sx={{ fontSize: { lg: '40px', xs: '24px' }, lineHeight: { lg: '46px', xs: '30px' } }}
         >
@@ -59,8 +67,8 @@ const HeroBanner = () => (
       </Box>
     </Box>
 
-    {/* Text and button below the image, pushed slightly further down */}
-    <Stack spacing={{ lg: 2.2, xs: 1.8 }} mt={{ lg: '32px', xs: '26px' }}>
+    {/* Button below the image */}
+    <Stack spacing={{ lg: 1.8, xs: 1.4 }} mt={{ lg: '28px', xs: '22px' }}>
       <Button
         component="a"
         href="#exercises"
@@ -83,17 +91,7 @@ const HeroBanner = () => (
         Explore Exercises
       </Button>
 
-      <Typography
-        color="#FFFFFF"
-        fontSize={{ lg: '22px', xs: '14px' }}
-        fontFamily="Alegreya"
-        lineHeight={{ lg: '35px', xs: '22px' }}
-        sx={{ maxWidth: { lg: '480px', xs: '320px' } }}
-      >
-        Check out the most effective exercises personalized to you
-      </Typography>
-
-      {/* Tagline is now inside the Gojo banner */}
+      {/* Tagline and description are now inside the Gojo banner */}
     </Stack>
   </Box>
 );
