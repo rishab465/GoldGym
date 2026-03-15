@@ -119,6 +119,7 @@ const SearchExercises = ({ setExercises, bodyPart, setBodyPart }) => {
               border: 'none',
               borderRadius: '40px',
               fontSize: { lg: '18px', xs: '14px' },
+              color: '#000',
             },
             '& fieldset': {
               borderRadius: '40px',
