@@ -101,7 +101,7 @@ const Exercises = ({ exercises, setExercises, bodyPart }) => {
 
   return (
     <Box id="exercises" sx={{ mt: { lg: '109px', xs: '50px' }, p: { lg: '20px', xs: '10px' } }}>
-      <Typography variant="h4" fontWeight="bold" sx={{ fontSize: { lg: '44px', xs: '28px' }, textAlign: 'center' }} mb="46px">Showing Results</Typography>
+      <Typography variant="h4" fontWeight="bold" sx={{ fontSize: { lg: '44px', xs: '24px' }, textAlign: 'center' }} mb={{ lg: '46px', xs: '32px' }}>Showing Results</Typography>
       <Stack direction="row" sx={{ gap: { lg: '50px', md: '30px', xs: '20px' }, mb: { lg: '60px', xs: '40px' } }} flexWrap="wrap" justifyContent="center">
         {currentExercises.map((exercise, idx) => (
           <Box key={idx} sx={{ width: { lg: 'auto', md: 'calc(50% - 15px)', xs: '100%' }, maxWidth: '350px' }}>

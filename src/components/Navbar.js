@@ -13,9 +13,9 @@ const Navbar = () => {
       justifyContent="space-between"
       alignItems="center"
       sx={{
-        gap: { sm: '123px', xs: '20px' },
+        gap: { sm: '123px', xs: '16px' },
         mt: { sm: '32px', xs: '16px' },
-        px: { sm: '20px', xs: '12px' },
+        px: { sm: '20px', xs: '10px' },
       }}
     >
       <Link to="/">
@@ -23,9 +23,9 @@ const Navbar = () => {
       </Link>
       <Stack
         direction="row"
-        gap={{ sm: '40px', xs: '20px' }}
+        gap={{ sm: '40px', xs: '18px' }}
         fontFamily="Alegreya"
-        fontSize={{ sm: '24px', xs: '18px' }}
+        fontSize={{ sm: '24px', xs: '16px' }}
         alignItems="flex-end"
       >
         <Link to="/" style={{ textDecoration: 'none', color: theme.palette.text.primary, borderBottom: '3px solid #FF2625' }}>Home</Link>

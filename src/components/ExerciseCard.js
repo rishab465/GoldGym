@@ -37,7 +37,7 @@ const ExerciseCard = ({ exercise }) => {
         src={imageSrc}
         alt={exercise.name}
         loading="lazy"
-        style={{ width: '100%', height: '300px', objectFit: 'cover', borderRadius: '20px' }}
+        style={{ width: '100%', objectFit: 'cover', borderRadius: '20px' }}
       />
       <Stack direction="row" sx={{ flexWrap: 'wrap', gap: '10px', mt: '10px' }}>
         <Button sx={{ ml: '0px', color: '#fff', background: '#FFA9A9', fontSize: { lg: '14px', xs: '12px' }, borderRadius: '20px', textTransform: 'capitalize', padding: '5px 15px' }}>
