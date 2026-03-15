@@ -33,9 +33,11 @@ const HeroBanner = () => (
         position: 'relative',
         zIndex: 1,
         maxWidth: { lg: '420px', xs: '280px' },
-        bgcolor: { lg: 'transparent', xs: 'rgba(0, 0, 0, 0.6)' },
-        borderRadius: { lg: 0, xs: '12px' },
-        p: { lg: 0, xs: '10px 12px' },
+        // Keep text readable but do not cover Gojo with a solid block
+        bgcolor: 'transparent',
+        borderRadius: 0,
+        p: { lg: 0, xs: 0 },
+        textShadow: '0 1px 3px rgba(0,0,0,0.9)',
       }}
     >
       <Typography color="#FF2625" fontWeight="600" fontSize={{ lg: '26px', xs: '20px' }}>
