@@ -13,7 +13,7 @@ const HeroBanner = () => (
       Fitness Club
     </Typography>
 
-    {/* Gojo image banner */}
+    {/* Gojo image banner with tagline inside bottom-left */}
     <Box
       sx={{
         width: '100%',
@@ -26,6 +26,7 @@ const HeroBanner = () => (
         borderRadius: '20px',
         position: 'relative',
         color: 'white',
+        overflow: 'hidden',
         '&::before': {
           content: '""',
           position: 'absolute',
@@ -37,7 +38,26 @@ const HeroBanner = () => (
           borderRadius: '20px',
         },
       }}
-    />
+    >
+      <Box
+        sx={{
+          position: 'absolute',
+          left: { lg: '24px', xs: '16px' },
+          bottom: { lg: '24px', xs: '14px' },
+          zIndex: 1,
+          color: '#FFFFFF',
+          textShadow: '0 2px 4px rgba(0,0,0,0.9)',
+        }}
+      >
+        <Typography
+          fontWeight={700}
+          sx={{ fontSize: { lg: '40px', xs: '24px' }, lineHeight: { lg: '46px', xs: '30px' } }}
+        >
+          Sweat, Smile <br />
+          And Repeat
+        </Typography>
+      </Box>
+    </Box>
 
     {/* Text and button below the image, pushed slightly further down */}
     <Stack spacing={{ lg: 2.2, xs: 1.8 }} mt={{ lg: '32px', xs: '26px' }}>
@@ -73,15 +93,7 @@ const HeroBanner = () => (
         Check out the most effective exercises personalized to you
       </Typography>
 
-      <Typography
-        fontWeight={700}
-        color="#FFFFFF"
-        sx={{ fontSize: { lg: '44px', xs: '26px' } }}
-        mt={{ lg: '16px', xs: '10px' }}
-      >
-        Sweat, Smile <br />
-        And Repeat
-      </Typography>
+      {/* Tagline is now inside the Gojo banner */}
     </Stack>
   </Box>
 );
