@@ -13,17 +13,17 @@ const ExerciseCard = ({ exercise }) => {
       try {
         const youtubeSearchUrl = 'https://youtube-search-and-download.p.rapidapi.com';
         const data = await fetchData(
-          `${youtubeSearchUrl}/search?query=${encodeURIComponent(
-            `${exercise.name} exercise`,
-          )}&type=v&sort=r`,
+          `${youtubeSearchUrl}/search?query=${encodeURIComponent(`${exercise.name} exercise`)}`,
           youtubeOptions,
         );
 
-        const firstVideo = data?.contents?.find(
+        // Prefer the first video with thumbnails; fall back to the first result
+        const firstVideoWithThumb = data?.contents?.find(
           (item) => item?.video && Array.isArray(item.video.thumbnails) && item.video.thumbnails.length > 0,
         );
 
-        const firstThumb = firstVideo?.video?.thumbnails?.[0]?.url;
+        const firstThumb = firstVideoWithThumb?.video?.thumbnails?.[0]?.url
+          || data?.contents?.[0]?.video?.thumbnails?.[0]?.url;
         if (firstThumb) {
           setThumbUrl(firstThumb);
         }
