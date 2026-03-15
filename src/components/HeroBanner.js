@@ -39,8 +39,8 @@ const HeroBanner = () => (
       }}
     />
 
-    {/* Text and button below the image */}
-    <Stack spacing={{ lg: 1.8, xs: 1.4 }} mt={{ lg: '22px', xs: '18px' }}>
+    {/* Text and button below the image, pushed slightly further down */}
+    <Stack spacing={{ lg: 2.2, xs: 1.8 }} mt={{ lg: '32px', xs: '26px' }}>
       <Button
         component="a"
         href="#exercises"
@@ -74,7 +74,7 @@ const HeroBanner = () => (
       <Typography
         fontWeight={700}
         sx={{ fontSize: { lg: '44px', xs: '26px' } }}
-        mt={{ lg: '10px', xs: '6px' }}
+        mt={{ lg: '16px', xs: '10px' }}
       >
         Sweat, Smile <br />
         And Repeat
