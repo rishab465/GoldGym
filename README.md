@@ -1,8 +1,5 @@
-# React Fitness Application
+# Gold Gym – React Fitness App
 
-![React Fitness Application](https://i.ibb.co/Yt9spGc/image.png)
+Live site: https://gold-gym-kappa.vercel.app/
 
-### [🌟 Become a top 1% Next.js 13 developer in only one course](https://jsmastery.pro/next13)
-### [🚀 Land your dream programming job in 6 months](https://jsmastery.pro/masterclass)
-
-## Launch your development career with project-based coaching - https://www.jsmastery.pro
+Simple fitness app built with React that lets you explore exercises, watch related videos, and find similar workouts by muscle group and equipment.
