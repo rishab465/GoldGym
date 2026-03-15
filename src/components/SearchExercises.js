@@ -23,15 +23,17 @@ const SearchExercises = ({ setExercises, bodyPart, setBodyPart }) => {
   }, []);
 
   const handleSearch = async () => {
-    if (search) {
+    const normalized = search.trim().toLowerCase();
+
+    if (normalized) {
       try {
         const exercisesData = await fetchData('https://exercisedb.p.rapidapi.com/exercises', exerciseOptions);
 
         const searchedExercises = exercisesData.filter(
-          (item) => item.name.toLowerCase().includes(search)
-                 || item.target.toLowerCase().includes(search)
-                 || item.equipment.toLowerCase().includes(search)
-                 || item.bodyPart.toLowerCase().includes(search),
+          (item) => item.name.toLowerCase().includes(normalized)
+                 || item.target.toLowerCase().includes(normalized)
+                 || item.equipment.toLowerCase().includes(normalized)
+                 || item.bodyPart.toLowerCase().includes(normalized),
         );
 
         window.scrollTo({ top: 1800, left: 100, behavior: 'smooth' });
@@ -92,12 +94,12 @@ const SearchExercises = ({ setExercises, bodyPart, setBodyPart }) => {
         ];
 
         const searchedFallback = fallbackExercises.filter(
-          (item) => item.name.toLowerCase().includes(search)
-                 || item.target.toLowerCase().includes(search)
-                 || item.equipment.toLowerCase().includes(search)
-                 || item.bodyPart.toLowerCase().includes(search),
+          (item) => item.name.toLowerCase().includes(normalized)
+                 || item.target.toLowerCase().includes(normalized)
+                 || item.equipment.toLowerCase().includes(normalized)
+                 || item.bodyPart.toLowerCase().includes(normalized),
         );
-
+        window.scrollTo({ top: 1800, left: 100, behavior: 'smooth' });
         setExercises(searchedFallback);
       }
     }
@@ -127,8 +129,8 @@ const SearchExercises = ({ setExercises, bodyPart, setBodyPart }) => {
             borderRadius: '40px',
           }}
           value={search}
-          onChange={(e) => setSearch(e.target.value.toLowerCase())}
-          onKeyPress={(e) => e.key === 'Enter' && handleSearch()}
+          onChange={(e) => setSearch(e.target.value)}
+          onKeyDown={(e) => e.key === 'Enter' && handleSearch()}
           placeholder="Search Exercises"
           type="text"
         />
@@ -142,6 +144,7 @@ const SearchExercises = ({ setExercises, bodyPart, setBodyPart }) => {
             height: '56px',
             position: 'absolute',
             right: '6px',
+            zIndex: 2,
             fontSize: { lg: '20px', xs: '12px' },
             borderRadius: '40px',
             '&:hover': { bgcolor: '#FF4444' },
