@@ -43,10 +43,6 @@ const HeroBanner = () => (
         <Typography color="#FF2625" fontWeight="600" fontSize={{ lg: '26px', xs: '20px' }}>
           Fitness Club
         </Typography>
-        <Typography fontWeight={700} sx={{ fontSize: { lg: '44px', xs: '26px' } }} mb="20px" mt={{ lg: '30px', xs: '22px' }}>
-          Sweat, Smile <br />
-          And Repeat
-        </Typography>
         <Typography fontSize={{ lg: '22px', xs: '14px' }} fontFamily="Alegreya" lineHeight={{ lg: '35px', xs: '22px' }}>
           Check out the most effective exercises personalized to you
         </Typography>
@@ -75,6 +71,10 @@ const HeroBanner = () => (
             Explore Exercises
           </Button>
         </Stack>
+        <Typography fontWeight={700} sx={{ fontSize: { lg: '44px', xs: '26px' } }} mt={{ lg: '26px', xs: '22px' }}>
+          Sweat, Smile <br />
+          And Repeat
+        </Typography>
       </Box>
     </Box>
     <Stack
